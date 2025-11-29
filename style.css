@@ -2,100 +2,119 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "roboto";
+    font-family: "roboto", sans-serif;
 }
 
-/* styling the background of the header and the hero */
+/* hero background */
 .nav-hero{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mapeera_house_or_the_Cemtenary_bank_headquarters.jpg/1200px-Mapeera_house_or_the_Cemtenary_bank_headquarters.jpg");
+    background-image: url("https://refactory.academy/wp-content/uploads/2025/08/0G2A8223.jpg");
     height: 80vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+
+}
+.nav-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* opacity */
+    z-index: 1;
 }
 
-/* changing the background image */
+/* hero content appears above overlay */
+.nav-hero * {
+    position: relative;
+    z-index: 2;
+}
 
+/* the navigation bar */
 
-/* styling the header */
 header{
-   
     height: 100px;
 }
+
 nav{
     align-items: center;
     height: 100%;
     padding-top: 30px;
-
-
 }
-nav .container{
+
+/* nav .container{
     display: flex;
-    justify-content: right;   
+    justify-content: right;
+    align-items: center;
+    gap: 20px;
+} */
+nav .container {
+    display: flex;
+    justify-content: space-between;   /* logo left, menu right */
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;                  /* optional spacing */
 }
+
+.menu-items ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+
 nav ul{
     display: flex;
     list-style: none;
     margin-top: 15px;
-    
-   
+    gap: 30px;
 }
-nav ul li{
-    margin-left: 30px;
-}
+
 nav ul li a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 16px;
 }
-a:hover{
+
+nav ul li a:hover{
     color:rgb(199, 199, 248);
 }
-/* 
-styling the logo */
-.logo{
- margin-right: 300px;
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 
-/* styling the search button */
+/* Search button */
 .search-button{
     margin-top: 10px;
-    margin-left: 15px;
-    margin-right: 120px;
 }
+
 #menu-search{
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px 12px;
     cursor: pointer;
     background-color: orange;
     font-weight: 600;
     border: none;
+    color: white;
 }
 
-/* styling the hero section */
+/* container- hero */
+
 .container-hero{
     width: 100%;
     text-align: center;
-    position: relative;
     margin-top: 20%;
-   
-}
-/* hero text */
-.title-hero{
-   
-   color: azure;
-  
-}
-.title-hero h1{
-    margin-bottom: 15px;
+    color: rgb(249, 243, 243);
 }
 
-/* hero buttons */
-/* .hero-buttons{
-    
-} */
+.title-hero h1{
+    margin-bottom: 5px;
+    font-size: 2.2rem;
+}
+
 .btn{
     padding: 15px;
     border-radius: 7px;
@@ -106,9 +125,8 @@ styling the logo */
     color: white;
     cursor: pointer;
     border: none;
-    
-  
 }
+
 .b1 { background: #543f89; }
 .b2 { background: #0e9f4a; }
 .b3 { background: #553d20; }
@@ -117,33 +135,39 @@ styling the logo */
     background-color: #1a1714;
 }
 
-/* styling the sub hero page */
+/* the sub-hero style */
 .sub-hero{
-    height: 400px;
     background-color: rgb(44, 40, 40);
     display: flex;
     padding: 60px;
-    gap: 100px;
+    gap: 60px;
     justify-content: center;
+    align-items: center;
+    
 }
 
-/* styling the text columns */
 .sub-hero-text{
     width: 50%;
-    padding: 10px;
+    min-width: 300px;
+   
 }
+
 .sub-hero-text h1{
     color: #543f89;
     margin-bottom: 10px;
+ 
 }
+
 .sub-hero-text h2{
     color: rgb(13, 127, 148);
     margin-bottom: 10px;
 }
+
 .sub-hero-text p{
     color: bisque;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
 }
+
 .sub-hero-button{
     padding: 10px 15px;
     border-radius: 7px;
@@ -151,70 +175,158 @@ styling the logo */
     font-weight: bold;
     font-size: 15px;
     margin-top: 20px;
-    color: rgb(236, 36, 36);
+    color: brown;
     cursor: pointer;
     border: none;
 }
+
 .sub-hero-button:hover{
     background-color: #a25a11;
-    color: white
+    color: white;
 }
-/* styling the image columns */
 
 .sub-hero-image img{
     border-radius: 7px;
+    width: 100%;
+    max-width: 500px;
     object-fit: cover;
 }
-
-/* features sections */
-.feature{
+/* 
+styling the featyre section */
+.feature {
     background-color: #1a1714;
-    height: 600px;
+   
+}
+.feature h3{
+     color: rgb(222, 120, 188);
+    text-align: center;        /* Centers all text inside */
+    padding: 20px 20px;
+}
+.feature h1{
+     color: rgb(222, 120, 188);
+    text-align: center;        /* Centers all text inside */
 }
 
-/* feature title */
-.feature{
-    color: rgb(222, 120, 188);
-    text-align: center;
-    padding: 20px 30px;
-    line-height: 40px;
-}
-
-.feature-cards{
-  
+.feature-cards {
     display: flex;
-    text-align: left;
-    gap: 20;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.feature-cards h1{
+    text-align: center;
 }
 
 .card {
-    width: 400px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin: 10px;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    width: 350px;
+    overflow: hidden; /* IMPORTANT for edge-to-edge images */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    text-align: left;
+}
+.card h2{
+    color: rgb(222, 120, 188);
 }
 
-.card button{
+.card p{color: bisque;}
+/* Make the image reach the edges */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Add padding only to text, not the whole card */
+.card h2,
+.card p,
+.card button {
+    padding: 0 20px;
+}
+
+/* spacing for elements */
+.card h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* button */
+.card button {
     background-color: #a25a11;
+    padding: 12px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-left: 20px;
+}
+
+.card button:hover {
+    background-color: #543f89;
+}
+
+/* section for the 10x program  */
+.x-program-container{
+     background-color: rgb(44, 40, 40);
+    display: flex;
+    padding: 60px;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.x-program{
+    width: 50%;
+    min-width: 300px;
+}
+.x-program h1{
+    color: #543f89;
+    margin-bottom: 10px;
+ 
+}
+
+.x-program h2{
+    color: rgb(206, 230, 234);
+    margin-bottom: 10px;
+}
+
+.x-program p{
+    color: bisque;
+    line-height: 1.6;
+}
+
+.sub-hero-button{
     padding: 10px 15px;
     border-radius: 7px;
     width: 200px;
     font-weight: bold;
     font-size: 15px;
     margin-top: 20px;
-    color: rgb(255, 255, 255);
+    color: brown;
     cursor: pointer;
     border: none;
-
 }
 
-.card button:hover{
-    background-color: #543f89;
+.sub-hero-button:hover{
+    background-color: #a25a11;
+    color: white;
+}
+
+.sub-hero-image img{
+    border-radius: 7px;
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
 }
 
 
@@ -223,38 +335,168 @@ styling the logo */
 
 
 
-
-/* styling the footer section */
-
-.footer-container{
-    
-     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mapeera_house_or_the_Cemtenary_bank_headquarters.jpg/1200px-Mapeera_house_or_the_Cemtenary_bank_headquarters.jpg");
+/* footer section styles */
+.footer-container {
+    background-image: url("https://gravitywll.com/wp-content/uploads/2018/12/Header-image.jpg");
     background-size: cover;
-     padding: 50px;
-    color: whitesmoke;
+    background-position: center;
+    padding: 60px 40px;
+    color: white;
+    position: relative;
 }
-.footer{
-    
+
+/* Dark overlay for readability */
+.footer-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.footer-container * {
+    position: relative;
+}
+
+/* FOOTER FLEX LAYOUT */
+.footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 50px;
     flex-wrap: wrap;
-   
-   
+    max-width: 1200px;
+    margin: auto;
 }
-.footer-heading{
-    display: flex;
-    flex-direction: column;
-    margin: 5rem;
-    
+
+/* LEFT COLUMN LOGO + DESC */
+.left-col {
+    flex: 1 1 250px;
+    max-width: 300px;
 }
-.footer-heading h3{
-    margin-bottom: 2rem;
+
+.left-col img {
+    margin-bottom: 15px;
 }
-.footer-heading a{
-    margin-bottom: 1rem;
+
+.left-col p {
+    line-height: 1.6;
+    color: #e6e6e6;
+}
+
+/* HEADINGS */
+.footer-heading {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-heading h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #ffce6f;  
+}
+
+/* LINKS */
+.footer-heading a {
+    display: block;
+    margin-bottom: 10px;
+    color: #e6e6e6;
     text-decoration: none;
-    color: azure;
+    font-size: 15px;
+    transition: 0.3s ease;
 }
-.footer-heading a:hover{
-    color: yellow;
+
+.footer-heading a:hover {
+    color: #ffd700;
 }
+
+/* PARAGRAPHS */
+.footer-heading p {
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+    .footer {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-heading,
+    .left-col {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 40px 20px;
+    }
+    .footer-heading h3 {
+        font-size: 18px;
+    }
+}
+
+
+
+ /* responsive design */
+
+
+@media (max-width: 1024px){
+    .logo{
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 768px){
+
+    nav .container{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .container-hero{
+        margin-top: 25%;
+    }
+
+    .sub-hero{
+        padding: 40px 20px;
+    }
+
+    .sub-hero-text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-hero-image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sub-hero-image img{
+        width: 90%;
+    }
+}
+
+@media (max-width: 550px){
+
+    .btn{
+        width: 90%;
+    }
+
+    .card{
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .footer{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}
+
