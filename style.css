@@ -329,10 +329,53 @@ styling the featyre section */
     object-fit: cover;
 }
 
+/* styling the summit section  */
 
+.summit{
+    background-image: url("images/summit.jpg");
+    height: 50vh;
+    background-size: cover;
+    position: relative;
+}
+.summit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* opacity */
+    z-index: 1;
+}
 
+.summit * {
+    position: relative;
+    z-index: 2;
+}
+.summit-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 35vh;
+    padding-left: 200px;
+    padding-right: 200px;
+   
+}
+.summit-text{
+    font-weight: 900;
+     color: rgb(255, 255, 255);
+}
+.summit-button{
+    background-color: green;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: none;
+}
 
-
+.summit-button:hover{
+    background-color: #543f89;
+}
 
 
 /* footer section styles */
@@ -412,6 +455,8 @@ styling the featyre section */
     color: #e6e6e6;
     line-height: 1.6;
 }
+
+
 
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
